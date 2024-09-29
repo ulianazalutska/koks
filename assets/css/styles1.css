@@ -1,0 +1,540 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(131, 86%, 16%);
+  --first-color-alt: hsl(99, 87%, 30%);
+  --white-color: #fff;
+  --text-color: hsl(22, 4%, 75%);
+  --text-color-light: hsl(22, 4%, 55%);
+  --body-color: hsl(137, 88%, 6%);
+  --container-color: hsl(120, 89%, 4%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --second-font: "Freckle Face", system-ui;
+
+  --biggest-font-size: 6rem;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 10rem;
+    --h1-font-size: 3.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.7rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--white-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 2rem 7rem;
+}
+
+
+/* scroll up */
+
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  opacity: .8;
+  padding: 0 .3rem;
+  border-radius: .4rem;
+  z-index: 10;
+  transition: .4s;
+}
+
+.scrollup:hover{
+  background-color: var(--first-color-alt);
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.show-scroll{
+  bottom: 5rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-family: var(--body-font);
+  font-weight: 700;
+  line-height: 130%;
+  color: var(--white-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/* Shapes */
+.shape__bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  mix-blend-mode: soft-light;
+  opacity: .5;
+}
+
+.shape__small, 
+.shape__big {
+  position: absolute;
+  background-color: var(--first-color);
+  filter: blur(96px);
+  z-index: -1;
+  /* border-radius: 50%; */
+}
+
+.shape__small {
+  width: 250px;
+  height: 250px;
+}
+
+.shape__big {
+  width: 350px;
+  height: 350px;
+  opacity: .8;
+}
+
+/*=============== HEADER & NAV ===============*/
+
+
+/* Show menu */
+
+
+/* Change background header */
+
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+.home {
+  position: relative;
+}
+.section {
+}
+.home__container {
+  /* padding-top: 3.5rem; */
+}
+.home__container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;           
+}
+
+.grid {
+}
+.home__data {
+  text-align: center;
+}
+.home__title {
+  position: relative;
+  
+  line-height: 140%;
+  width: max-content;
+  margin: 0 auto .5rem;
+}
+.home__title-img-1,
+.home__title-img-2 {
+  position: absolute;
+  width: 40px;
+}
+
+.home__title span{
+  display: block;
+  margin-bottom: 7rem;
+  font-family: var(--second-font);
+  font-size: var(--biggest-font-size);
+  font-weight: initial;
+  color: var(--white-color);
+}
+.home__title-img-1{
+  top: -3.4rem;
+  left: -2.5rem;
+  transform: rotate(-15deg);
+  animation: animate-star-1 5s infinite ease-in-out;
+}
+.home__title-img-2 {
+  bottom: -2.9rem;
+  right: -2.5rem;
+  transform: rotate(15deg);
+  animation: animate-star-2 5s infinite ease-in-out;
+}
+.home__img {
+  width: 300px;
+  justify-self: center;
+  margin-top: 2rem;
+}
+.home__tree-1,
+.home__tree-2 {
+  width: 200px;
+  position: absolute;
+  /* top: 13rem; */
+}
+.home__tree-1{
+  top: 0;
+  left: -3.2rem;
+
+}
+.home__tree-2 {
+  bottom: 5rem;
+  right: -3.2rem;
+}
+
+
+
+/* Star animation */
+@keyframes animate-star-1{
+  0%{
+    transform: scale(.7) rotate(-15deg);
+    opacity: .2;
+  }
+  50%{
+    transform: scale(1) rotate(-15deg);
+    opacity: 1;
+  }
+  100%{
+    transform: scale(.7) rotate(-15deg);
+    opacity: .2;
+  }
+}
+
+@keyframes animate-star-2{
+  0%{
+    transform: scale(1) rotate(15deg);
+    opacity: 1;
+  }
+  50%{
+    transform: scale(.7) rotate(15deg);
+    opacity: .2;
+  }
+  100%{
+    transform: scale(1) rotate(15deg);
+    opacity: 1;
+  }
+}
+
+.home .shape__small{
+  top: 0rem;
+  left: -3rem;
+}
+
+.home .shape__big{
+  bottom: 10rem;
+  right: -10rem;
+}
+
+/*=============== BUTTON ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--white-color);
+  padding: 1rem 1.5rem;
+  border-radius: 4rem;
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  transition: bacground .5s, color .5s;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+
+/*=============== PRODUCTS ===============*/
+.products {
+  position: relative;
+}
+.section {
+}
+.section__title {
+}
+.products__container {
+  padding-top: 4rem;
+  grid-template-columns: 228px;
+  justify-content: center;
+  row-gap: 6rem;
+  margin: 0 auto;
+}
+.grid {
+}
+.products__card {
+  position: relative;
+  background-color: var(--container-color);
+  border-radius: 2rem;
+  padding: 4.5rem 2.25rem 2rem;
+  box-shadow: 0 4px 16px hsla(22, 10%, 2%, .3);
+}
+.products__img {
+  position: absolute;
+  width: 120px;
+  inset: 0;
+  margin: 0 auto;
+  top: -3.5rem;
+  transition: transform .3s;
+}
+.products__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+.products__description {
+  font-size: var(--small-font-size);
+}
+.products__star {
+  width: 40px;
+  position: absolute;
+  top: 3.5rem;
+  right: 0.5rem;
+  transform: rotate(15deg);
+}
+
+.products__card:hover .products__img{
+  transform: translateY(-.5rem)
+}
+
+.products .shape__small{
+  top: 25rem;
+  left: -4rem;
+}
+
+
+/*=============== ABOUT ===============*/
+
+
+/*=============== ITEMS ===============*/
+
+
+/*=============== PARTY ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+::-webkit-scrollbar{
+  width: 0.6rem;
+  border-radius: 5rem;
+  background-color: hsl(144, 83%, 5%);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color: hsl(126, 80%, 8%);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(126, 80%, 12%);
+}
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+@media screen and (max-width: 344px){
+  .container{
+    margin-inline: 1rem;
+  }
+
+  .home__img{
+    width: 260px;
+  }
+
+  .home__title span{
+    font-size: 5.5rem;
+  }
+
+  .home__tree-1{
+    left: -4rem;
+        width: 180px;
+  }
+
+  .home__tree-2{
+        width: 180px;
+    right: -4rem;
+  }
+}
+
+
+/* For medium devices */
+@media screen and (min-width: 576px){
+  .home__container{
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+
+  .home__tree-1,
+  .home__tree-2{
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 767px){
+  /* .section{
+    padding-block: 7rem 1,5rem;
+  } */
+   .home__tree-1,
+  .home__tree-2{
+    width: 350px;
+  }
+
+  .section__title{
+    margin-bottom: 4rem;
+  }
+
+  .products__container{
+    grid-template-columns: repeat(2, 228px);
+    column-gap: 4rem;
+  }
+}
+
+
+/* For large devices */
+@media screen and (min-width: 1024px){
+  .shape__small,
+  .shape__big{
+    filter: blur(132px);
+    opacity: .5;
+  }
+
+  .shape__small{
+    width: 350px;
+    height: 350px;
+  }
+
+  .shape__big{
+    width: 450px;
+    height: 450px;
+  }
+
+  .home__title-img-1,
+  .home__title-img-2{
+    width: 60px;
+  }
+
+  .home__title-img-2{
+    bottom: -4.9rem;
+    right: -3.5rem;
+  }
+
+  .home__title-img-1{
+        top: -5.4rem;
+    left: -4rem;
+  }
+
+  .home__tree-1, .home__tree-2 {
+      width: 550px;
+      /* top: 5rem; */
+  }
+
+  .home__tree-2 {
+    right: -6.2rem;
+    /* bottom: 0rem; */
+}
+
+.home__tree-1 {
+    left: -4.2rem;
+    /* top: 0rem; */
+}
+
+/* .home__img {
+    width: 422px;
+} */
+ .products__container{
+  grid-template-columns: repeat(3, 254px);
+  column-gap: 8rem;
+ }
+
+ .products__card{
+  padding: 6rem 2.5rem 2rem;
+ }
+
+ .products__img{
+  width: 150px;
+ }
+}
+
+
+
+
+/* For 2K resolutions (2048 x 1152) */
